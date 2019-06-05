@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.chinaedustar.hbm.TUser" table="T_User">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="identity" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="Name" length="10" not-null="true" />
+		</property>
+		<property name="code" type="java.lang.String">
+			<column name="Code" length="30" not-null="true" />
+		</property>
+		<property name="loginId" type="java.lang.String">
+			<column name="LoginID" length="20" not-null="true" />
+		</property>
+		<property name="loginPw" type="java.lang.String">
+			<column name="LoginPW" length="32" not-null="true" />
+		</property>
+		<property name="question" type="java.lang.String">
+			<column name="Question" length="50" />
+		</property>
+		<property name="answer" type="java.lang.String">
+			<column name="Answer" length="32" />
+		</property>
+		<property name="icon" type="java.lang.String">
+			<column name="Icon" length="50" />
+		</property>
+		<property name="active" type="java.lang.Short">
+			<column name="Active" not-null="true" />
+		</property>
+		<property name="system" type="java.lang.Short">
+			<column name="System" not-null="true" />
+		</property>
+		<property name="teacher" type="java.lang.Short">
+			<column name="Teacher" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

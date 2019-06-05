@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="regNewUserForm" type="com.chinaedustar.form.RegNewUserForm" />
+    <form-bean name="forgetUserPsdForm" type="com.chinaedustar.form.ForgetUserPsdForm" />
+    
+    <form-bean name="loginForm" type="com.chinaedustar.form.LoginForm" />
+    <form-bean name="modifyPsdForm" type="com.chinaedustar.form.ModifyPsdForm" />
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    <forward name="CommonMsg" path="/CommonMsg.jsp" />
+
+  </global-forwards>
+
+  <action-mappings >
+    <action
+      attribute="regNewUserForm"
+      input="/RegNewUser.jsp"
+      name="regNewUserForm"
+      path="/regNewUser"
+      scope="request"
+      type="com.chinaedustar.act.RegNewUserAction"
+      validate="false">
+      <forward name="RegNewUserErr" path="/RegNewUser.jsp" />
+    </action>
+    
+    <action
+      attribute="forgetUserPsdForm"
+      input="/ForgetPsd.jsp"
+      name="forgetUserPsdForm"
+      path="/forgetUserPsd"
+      scope="request"
+      type="com.chinaedustar.act.ForgetUserPsdAction"
+      validate="false">
+      <forward name="VerSuc" path="/ModUserPsd.jsp" />
+    </action>
+    <action
+      attribute="regNewUserForm"
+      input="/ModUserInfo.jsp"
+      name="regNewUserForm"
+      path="/modifyUserInfo"
+      scope="request"
+      type="com.chinaedustar.act.ModifyUserInfoAction"
+      validate="false" />
+    <action
+      attribute="loginForm"
+      input="/login.jsp"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      type="com.chinaedustar.act.LoginAction"
+      validate="false" />
+    <action
+      attribute="modifyPsdForm"
+      input="/ModUserPsd.jsp"
+      name="modifyPsdForm"
+      path="/modifyPsd"
+      scope="request"
+      type="com.chinaedustar.act.ModifyPsdAction"
+      validate="false" />
+    <action
+      path="/delSelUser"
+      type="com.chinaedustar.act.DelSelUserAction"
+      validate="false" />
+
+  </action-mappings>
+
+  <message-resources parameter="com.chinaedustar.act.ApplicationResources" />
+</struts-config>
+
